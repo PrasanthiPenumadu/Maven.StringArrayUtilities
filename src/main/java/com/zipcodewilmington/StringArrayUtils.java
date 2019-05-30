@@ -132,12 +132,7 @@ public class StringArrayUtils {
     public static String[] packConsecutiveDuplicates(String[] array) {
         ArrayList<String> array1 = new ArrayList<>();
         String x = array[0];
-        for (int i = 0; i < array.length; i++) {
-            // if (array[i] == array[i + 1]) {
-            //     x = x + array[i + 1];
-            // } else array1.add(x);
-
-            if (!(i == (array.length - 1))) {
+        for (int i = 0; i < array.length-1; i++) {
                 if (array[i] != array[i + 1]) {
                     array1.add(x);
                     x = array[i + 1];
@@ -145,8 +140,7 @@ public class StringArrayUtils {
                 if (array[i] == array[i + 1]) {
                     x = x + array[i + 1];
                 }
-            } else array1.add(x);
-        }
+            }  array1.add(x);
         System.out.println(array1);
         String arr[] = new String[array1.size()];
         for (int i = 0; i < array1.size(); i++) {
